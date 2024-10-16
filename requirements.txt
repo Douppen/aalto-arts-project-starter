@@ -1,0 +1,160 @@
+Sprint 0. GOAL: Setting up the development environment.
+
+
+As a Developer,
+I want to use Google Drive as the primary storage solution for our CS-C2130 Software Project review 1-2-3 
+documents and other required course artifacts, So that we can ensure easy access, organization, 
+and collaboration on all project-related materials.
+Description: All course materials will be stored in Google Drive for easy access and organization.
+All other documents (e.g., Scrum meeting notes, internal files) will be stored in Microsoft Teams.
+
+As a Developer,
+I want to use Telegram as our primary channel for team communication,
+So that we can streamline our collaboration and facilitate quick decision-making, and enhance overall team productivity.
+
+As a Developer,
+I want to use Microsoft Teams as our primary channel for document storage,
+So that we can streamline our collaboration, improve accessibility to important documents, and enhance 
+overall team productivity.
+
+Title: Centralized Technical Documentation Storage in Teams.
+As a Developer,
+I want to store final UML diagrams and technical documentation in Teams,
+So that we can improve document accessibility.
+Acceptance Criteria:
+Final UML diagrams and official technical documentation are uploaded to the Teams.
+Description:
+Storing UML diagrams and technical documentation in Teams will create an organized and accessible 
+environment for our development team, ensuring all critical information is centralized.
+
+As developers,
+We want to first learn the fundamentals of TypeScript and study relevant Full-Stack development resources,
+So that we can effectively apply TypeScript in both frontend and backend development and ensure 
+consistent, high-quality code across the entire software stack.
+
+As a Developer,
+I want to study the usage, setup, and data types of PostgreSQL databases,
+So that I can effectively utilize PostgreSQL in our project and ensure optimal data management and performance.
+
+As a Developer,
+I want to engage in a comprehensive team discussion about how we will build our development, staging, and 
+production environments, So that we can collaboratively establish clear strategies, best practices, 
+and configurations, ensuring consistent deployment processes, reducing configuration issues, and 
+maintaining a high level of control over our development workflow.
+
+As a Developer,
+I want to familiarize myself with the NoSQL database Apache Cassandra,
+So that I can effectively implement it in our projects, specifically exploring how it integrates with 
+the TypeScript programming language in a Node.js environment for handling large-scale, distributed data 
+with high write throughput and scalability.
+Description: https://cassandra.apache.org/_/index.html
+
+As a development team,
+I want to assess if Postman fits our API testing and documentation needs,
+So that we can improve efficiency.
+Acceptance Criteria:
+Identify project requirements for API testing and documentation.
+Compare Postman’s features with other tools.
+Assess team familiarity with Postman and integration into our workflow.
+Evaluate Postman’s testing, automation, and collaboration features.
+Review only the free version at first.
+Decide whether to proceed with Postman.
+Description:
+Postman is a powerful tool for testing, automating, and documenting APIs. It supports HTTP requests, 
+test automation, environment management, and team collaboration through shared collections.
+https://www.youtube.com/watch?v=MFxk5BZulVU
+
+As a Scrum Master,
+I want the development team to adopt the Test-Driven Development (TDD) methodology and 
+use Nx to support the workflow, So that we can ensure higher code quality, better test coverage, 
+and maintainable software while optimizing our monorepo project structure.
+
+As a Scrum Master,
+I want software developers to use Jest as the unit testing framework,
+so that we can ensure high test coverage and maintain code quality throughout the development process.
+
+As a Scrum Master,
+I want the development team to implement a simple "Hello World" function once their 
+development environment is properly set up,
+So that I can verify that each developer's environment is configured correctly and 
+the basic functionality is working before proceeding with more complex tasks.
+
+As a Product Owner (PO), 
+I want the development team to use the GitHub Desktop application, so that 
+the commit process and merge conflict resolutions are simplified and more user-friendly, enabling 
+a more intuitive interface for managing code changes.
+Description: By utilizing GitHub Desktop, we will streamline the workflow, reduce potential errors 
+during merges, and enhance overall productivity, ensuring smoother version control operations and better 
+team collaboration.
+
+As a Developer,
+I want to practice the Codedamn online IDE,
+So that I can quickly prototype my tasks efficiently.
+
+1 part of Definition of Done (DoD). 
+As a Product Owner (PO), 
+I want technical documentation to stay up to date throughout the project so it can be reviewed during each Sprint 
+Review to reflect the current state of the software, so that stakeholders can review accurate documentation 
+during Sprint Reviews, ensuring transparency and understanding of project progress.
+Acceptance Criteria:
+Documentation is updated by the end of each sprint.
+Diagrams are reviewed in Sprint Review meetings.
+Changes in architecture or design are reflected promptly.
+Documentation is easily accessible to all stakeholders.
+Description:
+Mermaid is a JavaScript-based tool that uses Markdown-like text to create and update diagrams. 
+Its main goal is to help documentation stay in sync with development.
+By making diagrams easy to modify and integrate into production scripts, Mermaid helps 
+prevent creation of technical debt when the outdated docs reduce productivity and organizational learning.
+https://mermaid.live/
+
+2 part of Definition of Done (DoD). 
+As a Developer,
+I want to integrate ESLint with the Airbnb style guide in our web project,
+So that we can maintain consistent, high-quality code and follow industry-standard best practices.
+Acceptance Criteria:
+ESLint is configured with the Airbnb style guide.
+Code follows the Airbnb linting rules before being committed.
+All team members adhere to the established coding standards across the project.
+
+
+
+ENDS HERE.
+__________________________________________________________________________________
+
+These below tasks are not yet included in Sprint 0, but are mentioned here because they will be used 
+throughout the project and I want to inform everyone about this. Of course, you can already familiarise 
+yourself with them in general terms. 
+
+As a Product Owner (PO),
+I want software developers to use Cypress for end-to-end testing,
+so that we can ensure high test coverage across the entire user journey and validate the 
+functionality of the system as a whole.
+
+As a Product Owner (PO),
+I want the development team to use Robot Framework for both development and testing processes,
+So that we can enhance test automation, improve collaboration between developers and 
+ensure high-quality software delivery.
+
+Sprint 1. 
+
+As a Developer,
+I want to determine the Product Vision provided by the Product Owner,
+So that I can ensure that the final product aligns with this AR-based vision and incorporates key 
+elements of look and feel, as well as quality attributes.
+
+To be discussed in the Sprint planning:
+As a development team,
+I want to evaluate if Sequelize is the right ORM for PostgreSQL,
+So that we can simplify database operations, reduce manual SQL, and maintain scalable code.
+Acceptance Criteria:
+We’ve identified project requirements, including query complexity and scalability.
+We’ve compared Sequelize’s benefits and trade-offs with raw SQL.
+We’ve considered the team’s familiarity with Sequelize and its ease of adoption.
+We’ve reviewed performance impacts and potential overhead.
+We’ve assessed when Sequelize’s abstraction is useful and when raw SQL is needed.
+We’ve made a decision on using Sequelize or not.
+Description:
+Sequelize enables most PostgreSQL interactions without SQL syntax. It handles CRUD operations and 
+schema management with JavaScript or TypeScript. While SQL may be required in complex cases, for 
+basic operations, Sequelize’s abstraction is sufficient.
