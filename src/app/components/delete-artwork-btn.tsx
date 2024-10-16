@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteArtworkAction } from "@/backend/controllers/artwork.actions";
+import { deleteArtworkAction } from "@/backend/actions/artwork.actions";
 import { Button } from "./ui/button";
 
 type Props = {

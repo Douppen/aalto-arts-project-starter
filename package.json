@@ -5,9 +5,9 @@
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "sst shell next dev",
-    "db": "sst shell drizzle-kit",
-    "db:studio": "sst shell drizzle-kit studio"
+    "dev": "next dev",
+    "db": "drizzle-kit",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.667.0",
@@ -25,7 +25,6 @@
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
     "server-only": "^0.0.1",
-    "sst": "^3.1.74",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -7,7 +7,7 @@ import {
   TableRow,
 } from "./ui/table";
 import { Heading } from "./ui/heading";
-import { getArtworksAction } from "@/backend/controllers/artwork.actions";
+import { getArtworksAction } from "@/backend/actions/artwork.actions";
 import { DeleteArtworkBtn } from "./delete-artwork-btn";
 
 export async function Artworks() {

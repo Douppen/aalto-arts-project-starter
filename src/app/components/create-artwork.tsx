@@ -6,8 +6,8 @@ import { Input } from "./ui/input";
 import { Heading } from "./ui/heading";
 import { useHookFormAction } from "@next-safe-action/adapter-react-hook-form/hooks";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createArtworkAction } from "@/backend/controllers/artwork.actions";
-import { $createArtworkInput } from "@/backend/controllers/artwork.validation";
+import { createArtworkAction } from "@/backend/actions/artwork.actions";
+import { $createArtworkInput } from "@/backend/actions/artwork.validation";
 
 export function CreateArtwork() {
   const { form, handleSubmitWithAction, resetFormAndAction } =
