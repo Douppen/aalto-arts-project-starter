@@ -25,7 +25,6 @@ export function UploadImage({ url }: { url: string }) {
           });
 
           window.location.href = image.url.split("?")[0];
-          console.log(image.url);
         }}
       >
         <Fieldset>
