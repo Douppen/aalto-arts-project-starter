@@ -13,17 +13,22 @@ const createProductionDb = () => {
   return drizzle(sql, { casing: "snake_case" });
 };
 
-const createDevelopmentDb = () => {
+const createDevelopmentDb = async () => {
   if (!process.env.LOCAL_POSTGRES_URL) {
-    throw new Error("LOCAL_POSTGRES_URL must be set as environment variable in development");
+    throw new Error(
+      "LOCAL_POSTGRES_URL must be set as environment variable in development"
+    );
   }
   const sql = postgres(process.env.LOCAL_POSTGRES_URL);
   const devDb = drizzleDev(sql, { casing: "snake_case" });
-  migrate(devDb, { migrationsFolder: "migrations" });
+  const migrationPromise = migrate(devDb, { migrationsFolder: "migrations" });
+  console.log("migrating ...");
+  await migrationPromise;
+  console.log("migration done");
   return devDb;
 };
 
 export const db =
   process.env.NODE_ENV === "production"
     ? createProductionDb()
-    : createDevelopmentDb();
+    : await createDevelopmentDb();
