@@ -1,20 +1,15 @@
 import { defineConfig } from "drizzle-kit";
 import { config } from "dotenv";
+import { validateEnvVar } from "@/backend/utils/validate-env";
 
 config({ path: [".env.development"] });
-
-if (!process.env.LOCAL_POSTGRES_URL) {
-  throw new Error(
-    "LOCAL_POSTGRES_URL must be set as environment variable in development"
-  );
-}
 
 export default defineConfig({
   schema: ["./src/backend/db/schema.ts"],
   out: "./migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.LOCAL_POSTGRES_URL,
+    url: validateEnvVar("LOCAL_POSTGRES_URL"),
   },
   casing: "snake_case",
 });
