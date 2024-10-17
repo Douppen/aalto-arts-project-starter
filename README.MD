@@ -5,8 +5,12 @@ After cloning the project, run the following command in your terminal while in t
 ```
 npm install
 ```
-
 This will install all the dependencies needed to run the project.
+
+To spin up the Postgres Docker container, make sure you have Docker installed. Run the following command to start the container:
+```
+docker compose up -d
+```
 
 Then, you can run the project locally in development mode with:
 
@@ -21,4 +25,9 @@ The database url and the S3 bucket url are secrets that should not be pushed to 
 ```
 NEON_DATABASE_URL=xxxxxxx
 S3_BUCKET_NAME=xxxxxxx
+```
+
+To shut down the Postgres instance, run:
+```
+docker compose down
 ```
