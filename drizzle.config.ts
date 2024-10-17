@@ -1,5 +1,6 @@
 import { defineConfig } from "drizzle-kit";
 import { config } from "dotenv";
+import { getEnvironment } from "@/backend/utils/get-environment";
 
 config({ path: ".env.local" });
 
@@ -9,7 +10,7 @@ export default defineConfig({
   dialect: "postgresql",
   dbCredentials: {
     url:
-      process.env.NODE_ENV === "development"
+      getEnvironment() === "development"
         ? "postgresql://username:password@localhost:5432/database"
         : process.env.NEON_DATABASE_URL!,
   },

@@ -4,6 +4,7 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle as drizzleDev } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
+import { getEnvironment } from "../utils/get-environment";
 
 const createProductionDb = () => {
   if (!process.env.NEON_DATABASE_URL) {
@@ -23,6 +24,6 @@ const createDevelopmentDb = () => {
 };
 
 export const db =
-  process.env.NODE_ENV === "production"
+  getEnvironment() === "production"
     ? createProductionDb()
     : createDevelopmentDb();
