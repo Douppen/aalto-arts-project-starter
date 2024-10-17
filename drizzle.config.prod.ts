@@ -1,11 +1,11 @@
 import { defineConfig } from "drizzle-kit";
 import { config } from "dotenv";
 
-config({ path: [".env.development"] });
+config({ path: [".env.local"] });
 
-if (!process.env.LOCAL_POSTGRES_URL) {
+if (!process.env.NEON_DATABASE_URL) {
   throw new Error(
-    "LOCAL_POSTGRES_URL must be set as environment variable in development"
+    "NEON_DATABASE_URL must be set as environment variable in production"
   );
 }
 
@@ -14,7 +14,7 @@ export default defineConfig({
   out: "./migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.LOCAL_POSTGRES_URL,
+    url: process.env.NEON_DATABASE_URL,
   },
   casing: "snake_case",
 });

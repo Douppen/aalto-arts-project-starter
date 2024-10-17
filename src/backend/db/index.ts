@@ -14,9 +14,10 @@ const createProductionDb = () => {
 };
 
 const createDevelopmentDb = () => {
-  const sql = postgres(
-    "postgresql://username:password@localhost:5432/database"
-  );
+  if (!process.env.LOCAL_POSTGRES_URL) {
+    throw new Error("LOCAL_POSTGRES_URL must be set as environment variable in development");
+  }
+  const sql = postgres(process.env.LOCAL_POSTGRES_URL);
   const devDb = drizzleDev(sql, { casing: "snake_case" });
   migrate(devDb, { migrationsFolder: "migrations" });
   return devDb;
