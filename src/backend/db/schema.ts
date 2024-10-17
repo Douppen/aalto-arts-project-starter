@@ -1,5 +1,3 @@
-import "server-only";
-
 import { pgTable } from "drizzle-orm/pg-core";
 
 export const artworksTbl = pgTable("artworks", (t) => ({
