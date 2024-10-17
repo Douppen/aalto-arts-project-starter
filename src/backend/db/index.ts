@@ -16,10 +16,10 @@ const createProductionDb = () => {
   return drizzle(sql, { casing: "snake_case" });
 };
 
-const createDevelopmentDb = () => {
+const createDevelopmentDb = async () => {
   const sql = postgres("postgresql://username:password@localhost:5432/database");
   const devDb = drizzleDev(sql, { casing: "snake_case" });
-  migrate(devDb, { migrationsFolder: "migrations" });
+  await migrate(devDb, { migrationsFolder: "migrations" });
   return devDb;
 };
 
