@@ -11,3 +11,33 @@ services:
       - POSTGRES_USER=username
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=database
+  
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9000:9000"  # S3 compatible API
+      - "9001:9001"  # MinIO Console
+    environment:
+      MINIO_ROOT_USER: "minioadmin"
+      MINIO_ROOT_PASSWORD: "minioadmin"
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio-data:/data
+  
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      /usr/bin/mc alias set myminio http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc mb myminio/bucket;
+      /usr/bin/mc policy set readwrite myminio/bucket;
+      /usr/bin/mc ls myminio;
+      exit 0;
+      "
+
+volumes:
+  minio-data:

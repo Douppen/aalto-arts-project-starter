@@ -24,7 +24,14 @@ export function UploadImage({ url }: { url: string }) {
             },
           });
 
-          window.location.href = image.url.split("?")[0];
+          if (!image.ok) {
+            window.alert("Upload failed");
+            return;
+          }
+
+          const objectId = image.url.split("/")[4].split("?")[0]; // 🍝
+          window.alert(`Image ${objectId} uploaded successfully`);
+          //window.location.href = image.url.split("?")[0];
         }}
       >
         <Fieldset>
