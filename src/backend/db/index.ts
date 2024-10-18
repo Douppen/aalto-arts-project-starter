@@ -5,14 +5,14 @@ import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
 import { validateEnvVar } from "../utils/validate-env";
 
-function createProdDbClient() {
+function createDbClient() {
   const sql = neon(validateEnvVar("NEON_DATABASE_URL"));
   const prodDb = drizzle(sql, { casing: "snake_case" });
 
   return prodDb;
 }
 
-async function createDevDbClient() {
+async function createDbClientLocalDb() {
   const devDb = drizzleDev(postgres(validateEnvVar("LOCAL_POSTGRES_URL")), {
     casing: "snake_case",
   });
@@ -24,5 +24,5 @@ async function createDevDbClient() {
   return devDb;
 }
 
-const isProd = validateEnvVar("NODE_ENV") === "production";
-export const db = isProd ? createProdDbClient() : await createDevDbClient();
+const isDev = validateEnvVar("NODE_ENV") === "development";
+export const db = isDev ? await createDbClientLocalDb() : createDbClient();
