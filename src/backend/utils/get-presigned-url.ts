@@ -16,7 +16,7 @@ async function getPresignedUrlS3() {
   return signedUrl;
 }
 
-async function getPresignedUrlLocalMiniIO() {
+async function getPresignedUrlLocalMinIO() {
   const s3Client = new S3Client({
     region: "eu-north-1", // can be anything
     endpoint: "http://localhost:9000",
@@ -38,5 +38,5 @@ async function getPresignedUrlLocalMiniIO() {
 
 const isDev = validateEnvVar("NODE_ENV") === "development";
 export const getPresignedUrl = isDev
-  ? getPresignedUrlLocalMiniIO
+  ? getPresignedUrlLocalMinIO
   : getPresignedUrlS3;
