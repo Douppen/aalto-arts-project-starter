@@ -11,7 +11,7 @@ This will install all the dependencies needed to run the project.
 To spin up the Postgres Docker container and MinIO (local S3-like and S3-compatible storage), make sure you have Docker installed. Run the following command to start the container:
 
 ```
-docker compose up -d
+npm run docker:up
 ```
 
 MinIO takes couple of seconds to set up.
@@ -47,7 +47,7 @@ You only need these secrets when you run the application in production.
 To shut down the Postgres instance, run:
 
 ```
-docker compose down
+npm run docker:down
 ```
 
 To shut down the NextJS app, you can press `ctrl+c/cmd+c` in the terminal window in which you launched the app.
